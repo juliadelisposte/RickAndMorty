@@ -1,0 +1,29 @@
+<div class="container">
+  <app-header></app-header>
+  
+  <div class="card-container">
+    <app-card-header title="Favoritos" (search)="filterCharacters($event)"></app-card-header>
+    <app-no-results *ngIf="filteredFavorites.length === 0 && favorites.length"></app-no-results>
+
+    <div *ngIf="!favorites.length" class="no-results-container">
+        <p>Parece que você ainda não tem favoritos</p>
+        <span>Volte à tela inicial e escolha os melhores para você.</span>
+        <button class="return-button" (click)="goToHome()">Voltar ao Início</button>
+    </div>
+
+    <div class="card-container-content">
+      <mat-card class="character-card" *ngFor="let character of filteredFavorites">
+        <img mat-card-image [src]="character.image" alt="{{ character.name }}">
+        <mat-card-content>
+          <mat-card-title>{{ character.name }}</mat-card-title>
+          <mat-card-subtitle>{{ character.species }}</mat-card-subtitle>
+        </mat-card-content>
+        <button class="heart-icon" mat-icon-button (click)="toggleFavorite(character)">
+            <mat-icon [ngStyle]="{'color': isFavorite(character) ? 'black' : 'white'}">
+                {{ isFavorite(character) ? 'favorite' : 'favorite_border' }}
+              </mat-icon>
+          </button>
+      </mat-card>
+    </div>
+  </div>
+</div>

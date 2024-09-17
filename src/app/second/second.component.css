@@ -1,0 +1,183 @@
+.container {
+    background-color: #1F1F1F;
+    color: white;
+    min-height: 100vh;
+    padding: var(--measure-spacing-xxxl) var(--measure-spacing-l);
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+  }
+
+  button {
+    background-color: #212121;
+    border: 2px solid #555;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+  
+  .card-container {
+    align-items: center;
+    align-self: center;
+  }
+
+  .card-container-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    align-self: center;
+  }
+  
+  .character-card {
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 8px;
+    transition: transform 0.2s;
+    margin: 10px;
+  }
+  
+  .character-card:hover {
+    transform: scale(1.05);
+  }
+
+  .heart-icon {
+    background: none;
+    border: none;
+    right: 1px;
+    background: none;
+    border: none;
+    color: black;
+  }
+
+  mat-card {
+    position: relative;
+    width: 180px;
+    height: auto;
+  }
+  
+  mat-card-image {
+    height: 140px;
+    object-fit: cover;
+    background-size: cover;
+  }
+  
+  .character-card mat-card-title {
+    font-family: "Creepster", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-align: start;
+  }
+
+  .main-content {
+    display: contents;
+  }
+
+  mat-card-title,
+  mat-card-subtitle,
+  mat-card-content p {
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    margin: 5px 0;
+    text-align: start;
+  }
+  
+  .footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #1F1F1F;
+    color: #777;
+    border-top: 1px solid #333;
+  }
+
+  mat-icon {
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+  .return-button {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #555;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .no-results-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0A0A0A;
+    color: white;
+    height: 500px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 0;
+    width: 600px;
+  }
+  
+  .no-results-container p {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .no-results-container span {
+    font-size: 16px;
+    color: #888;
+  }
+
+  .return-button {
+    position: static;
+    display: inline-block;
+    visibility: visible;
+  }
+  
+  
+  button {
+    position: absolute;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+  
+    button {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .card-container-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    mat-card {
+      width: 100%;
+    }
+  
+    .character-card {
+      margin: 5px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card-container-content {
+      grid-template-columns: 1fr;
+    }
+  
+    mat-card {
+      width: 100%;
+    }
+  
+    button {
+      font-size: 12px;
+      padding: 5px 8px;
+    }
+  }

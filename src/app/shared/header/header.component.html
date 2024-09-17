@@ -1,0 +1,16 @@
+<header>
+    <img src="https://cdn140.picsart.com/298992691025211.png?type=webp&to=min&r=250" alt="Logo" class="logo">
+    <div class="header-right">
+      <div class="button-toggle-group">
+        <button class="header-btn" [ngClass]="{'active': currentPage === 'first-component'}" (click)="setPage('first')">
+          <span class="material-icons">home</span> Início
+        </button>
+        <button class="header-btn" [ngClass]="{'active': currentPage === 'second-component'}" (click)="setPage('second')">
+          <span class="material-icons">favorite</span> Favoritos
+          <span class="favorite-count">{{ favoritesCount }}</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  
